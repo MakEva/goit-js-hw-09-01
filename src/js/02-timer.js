@@ -28,7 +28,8 @@ const options = {
     selectedDate = selectedDates[0];
     if (selectedDate <= Date.now()) {
       Notiflix.Notify.success("Please choose a date in the future");
-        refs.startBtn.disabled = true;
+      refs.startBtn.disabled = true;
+      return;
       } else {
         refs.startBtn.disabled = false;
       }
@@ -46,7 +47,11 @@ function onStartBtnClick() {
    convertMs(ms);
 
    if (ms <= 1000) {
-    clearInterval(timerId);
+     clearInterval(timerId);
+      refs.daysEl.textContent = "00";
+      refs.hoursEl.textContent = "00";
+      refs.minutesEl.textContent = "00";
+      refs.secondsEl.textContent = "00";
   }
   }, 1000);
   
