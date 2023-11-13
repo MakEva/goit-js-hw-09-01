@@ -35,10 +35,13 @@ flatpickr(refs.inputEl, options);
 refs.startBtn.addEventListener("click", onStartBtnClick);
 
 function onStartBtnClick() {
-  setInterval(() => {
+ timerId = setInterval(() => {
     const ms = selectedDate - currentDate;
-    return ms;
+    // return ms;
   }, 1000);
+  if (ms <= 0) {
+    clearInterval(timerId);
+  }
 }
 
 function convertMs(ms) {
