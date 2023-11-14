@@ -9,9 +9,8 @@ const refs = {
     daysEl: document.querySelector("[data-days]"),
     hoursEl: document.querySelector("[data-hours]"),
     minutesEl: document.querySelector("[data-minutes]"),
-    secondsEl: document.querySelector("[data-seconds]"),  
+    secondsEl: document.querySelector("[data-seconds]")  
 };
-console.log(refs.hoursEl);
 
 refs.startBtn.disabled = true;
 let selectedDate = null;
