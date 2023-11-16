@@ -13,6 +13,7 @@ const refs = {
 };
 
 refs.startBtn.disabled = true;
+refs.inputEl.disabled = false;
 let selectedDate = null;
 let timerId = null;
 
@@ -40,6 +41,8 @@ flatpickr(refs.inputEl, options);
 refs.startBtn.addEventListener("click", onStartBtnClick);
 
 function onStartBtnClick() {
+  refs.startBtn.disabled = true;
+  refs.inputEl.disabled = true;
  timerId = setInterval(() => {
    const ms = selectedDate - Date.now();
    
